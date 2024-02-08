@@ -2,6 +2,9 @@ package net.johnny.folclorebr;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.johnny.folclorebr.entity.ModEntities;
+import net.johnny.folclorebr.entity.custom.HumanCucaEntity;
 import net.johnny.folclorebr.item.CustomItems;
 import net.johnny.folclorebr.item.ModItemGroups;
 import org.slf4j.Logger;
@@ -15,5 +18,6 @@ public class Folclorebrmod implements ModInitializer {
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
 		CustomItems.registerModItems();
+		FabricDefaultAttributeRegistry.register(ModEntities.CUCA, HumanCucaEntity.createHumanCucaAttibutes());
 	}
 }
